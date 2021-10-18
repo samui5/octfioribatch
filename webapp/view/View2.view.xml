@@ -2,6 +2,7 @@
 controllerName="tcs.fin.payroll.controller.View2">
     <Page title="Ananya" showNavButton="true" navButtonPress="onBack">
         <content>
+        <!-- Ananya changing View2 -->
             <ObjectHeader title="{NAME}" intro="{DESCRIPTION}" number="{PRICE}" numberUnit="{CURRENCY_CODE}"
             icon="{imageURL}"></ObjectHeader>
             <IconTabBar >
