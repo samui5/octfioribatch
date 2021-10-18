@@ -1,7 +1,8 @@
 <mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core"
 controllerName="tcs.fin.payroll.controller.View2">
-    <Page title="View 2" showNavButton="true" navButtonPress="onBack">
+    <Page title="Ananya" showNavButton="true" navButtonPress="onBack">
         <content>
+        <!-- Ananya changing View2 -->
             <ObjectHeader title="{NAME}" intro="{DESCRIPTION}" number="{PRICE}" numberUnit="{CURRENCY_CODE}"
             icon="{imageURL}"></ObjectHeader>
             <IconTabBar >
