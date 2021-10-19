@@ -16,6 +16,9 @@ builder:
         target:
           destination: CFN
           url: http://103.207.171.202:8021
+        credentials:
+          username: env:MY_USER
+          password: env:MY_PASSWORD
         app:
           name: ZZ1_OCTFIORIAPP
           description: Maza Aavigiyo

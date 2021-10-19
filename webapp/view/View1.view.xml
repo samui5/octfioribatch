@@ -6,7 +6,10 @@ controllerName="tcs.fin.payroll.controller.View1">
         </headerContent>
         <content>
             <SearchField id="idSearch" search="onSearch"/>
-            <List id="idList" items="{/ProductSet}" 
+            <List id="idList" items="{path : '/ProductSet',
+                                      sorter : {
+                                        path: 'CATEGORY', group : true
+                                      } }" 
             growing="true" growingThreshold="10"
             selectionChange="onSelectItem" delete="onDelete" mode="SingleSelectMaster">
                 <headerToolbar>

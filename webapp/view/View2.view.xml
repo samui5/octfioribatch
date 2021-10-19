@@ -9,6 +9,7 @@ controllerName="tcs.fin.payroll.controller.View2">
                 <items>
                     <IconTabFilter text="More Info" icon="sap-icon://warning">
                         <core:Fragment fragmentName="tcs.fin.payroll.fragments.MoreInfo" type="XML" />
+                        <Image src="{local>/imagePath}" />
                     </IconTabFilter>
                     <IconTabFilter text="Suppliers" icon="sap-icon://supplier">
                         <core:Fragment fragmentName="tcs.fin.payroll.fragments.SupplierTab" type="XML" />

@@ -4,8 +4,9 @@ sap.ui.define([
     'sap/m/MessageToast',
     'sap/ui/core/Fragment',
     'sap/ui/model/Filter',
-    'sap/ui/model/FilterOperator'
-], function(BaseController,MessageBox,MessageToast, Fragment,Filter,FilterOperator) {
+    'sap/ui/model/FilterOperator',
+    'sap/ui/model/json/JSONModel'
+], function(BaseController,MessageBox,MessageToast, Fragment,Filter,FilterOperator, JSONModel) {
     'use strict';
     return BaseController.extend("tcs.fin.payroll.controller.View2",{
         onInit: function(){
@@ -19,6 +20,7 @@ sap.ui.define([
             //hey my Router, whenever route change call a method herculis
             this.oRouter.getRoute("detail").attachMatched(this.herculis, this);
             //this.oRouter.attachRouteMatched(this.herculis, this);
+            this.getView().setModel(new JSONModel({imagePath: ""}),"local");
         },
         onTest: function(){
             MessageBox.confirm("Parasite is working");
@@ -138,12 +140,17 @@ sap.ui.define([
             //now the route changed
             //Step 1: what is fruit id selected by user
             var sIndex = oEvent.getParameter("arguments").fruitId;
+            var sId = sIndex.split("'")[1];
             //step 2: construct the path for element binding
             var sPath = '/' + sIndex;
             //Step 3: perform the element binding with current view
             this.getView().bindElement(sPath,{
                 expand: 'To_Supplier'
             });
+
+            var localModel = this.getView().getModel("local");
+            localModel.setProperty("/imagePath", "/sap/opu/odata/sap/ZOCT_ODATA_SRV/ProductImgSet('" +  sId + "')" + "/$value");
+
         },
         onSave: function () {
             MessageBox.confirm("Would like to save?",{
